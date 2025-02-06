@@ -1,0 +1,19 @@
+{
+    "language": "tamil",
+    "kaldi_train_dir": "/nlsasfs/home/nltm-pilot/msdafini/k2/k2_expts/tamil/data/train",
+    "kaldi_test_dirs": "/nlsasfs/home/nltm-pilot/msdafini/k2/k2_expts/tamil/data/eval",
+    "kaldi_val_dir": "/nlsasfs/home/nltm-pilot/msdafini/k2/k2_expts/tamil/data/dev",
+    "musan_download_dir": "",
+    "stage": "6",
+    "stop_stage": "6",
+    "bpe_vocab_size": "1200",
+    "sampling_rate": "16000",
+    "feature_dim": "80",
+    "num_jobs": "64",
+    "kaldi_root_dir": "/nlsasfs/home/nltm-pilot/akshaya/kaldi",
+    "icefall_root_dir": "/nlsasfs/home/nltm-pilot/msdafini/anaconda3/envs/og_icefall",
+    "cuda_visible_devices": "0",
+    "on_the_fly_feats": "true",
+    "prepare_dev_from_train": "false",
+    "dev_from_train_percent": ""
+}
