@@ -1,0 +1,101 @@
+diff --git a/sherpa/bin/pruned_transducer_statelessX/offline_client.py b/sherpa/bin/pruned_transducer_statelessX/offline_client.py
+index d963947..fb34ebb 100755
+--- a/sherpa/bin/pruned_transducer_statelessX/offline_client.py
++++ b/sherpa/bin/pruned_transducer_statelessX/offline_client.py
+@@ -76,7 +76,7 @@ async def run(server_addr: str, server_port: int, test_wavs: List[str]):
+         for test_wav in test_wavs:
+             logging.info(f"Sending {test_wav}")
+             wave, sample_rate = torchaudio.load(test_wav)
+-            assert sample_rate == 16000, sample_rate
++            assert sample_rate == 8000, sample_rate
+ 
+             wave = wave.squeeze(0)
+             num_bytes = wave.numel() * wave.element_size()
+diff --git a/sherpa/bin/pruned_transducer_statelessX/offline_server.py b/sherpa/bin/pruned_transducer_statelessX/offline_server.py
+index 7769d43..2651901 100755
+--- a/sherpa/bin/pruned_transducer_statelessX/offline_server.py
++++ b/sherpa/bin/pruned_transducer_statelessX/offline_server.py
+@@ -330,7 +330,7 @@ class OfflineServer:
+         opts.device = "cpu"  # Note: It also supports CUDA, e.g., "cuda:0"
+         opts.frame_opts.dither = 0
+         opts.frame_opts.snip_edges = False
+-        opts.frame_opts.samp_freq = 16000
++        opts.frame_opts.samp_freq = 8000
+         opts.mel_opts.num_bins = 80
+ 
+         fbank = kaldifeat.Fbank(opts)
+@@ -388,7 +388,7 @@ class OfflineServer:
+         """
+         logging.info("Warmup start")
+ 
+-        samples = torch.rand(16000 * 1, dtype=torch.float32)  # 1 second
++        samples = torch.rand(8000 * 1, dtype=torch.float32)  # 1 second
+         features = await self.compute_features(samples)
+         await self.compute_and_decode(features)
+         logging.info("Warmup done")
+diff --git a/sherpa/bin/web/js/offline_record.js b/sherpa/bin/web/js/offline_record.js
+index d1bf8fe..f66c20d 100644
+--- a/sherpa/bin/web/js/offline_record.js
++++ b/sherpa/bin/web/js/offline_record.js
+@@ -83,7 +83,7 @@ const canvasCtx = canvas.getContext('2d');
+ let mediaStream;
+ let analyser;
+ 
+-let expectedSampleRate = 16000;
++let expectedSampleRate = 8000;
+ let recordSampleRate;  // the sampleRate of the microphone
+ let recorder = null;   // the microphone
+ let leftchannel = [];  // TODO: Use a single channel
+diff --git a/sherpa/bin/web/js/streaming_record.js b/sherpa/bin/web/js/streaming_record.js
+index e1be94d..18a590b 100644
+--- a/sherpa/bin/web/js/streaming_record.js
++++ b/sherpa/bin/web/js/streaming_record.js
+@@ -94,7 +94,7 @@ const canvasCtx = canvas.getContext('2d');
+ let mediaStream;
+ let analyser;
+ 
+-let expectedSampleRate = 16000;
++let expectedSampleRate = 8000;
+ let recordSampleRate;  // the sampleRate of the microphone
+ let recorder = null;   // the microphone
+ let leftchannel = [];  // TODO: Use a single channel
+diff --git a/sherpa/cpp_api/bin/online-recognizer.cc b/sherpa/cpp_api/bin/online-recognizer.cc
+index ffbd269..65aa40b 100644
+--- a/sherpa/cpp_api/bin/online-recognizer.cc
++++ b/sherpa/cpp_api/bin/online-recognizer.cc
+@@ -107,7 +107,8 @@ int32_t main(int32_t argc, char *argv[]) {
+   torch::jit::setGraphExecutorOptimize(false);
+ 
+   // All models in icefall use training data with sample rate 16000
+-  float expected_sample_rate = 16000;
++  // Here it is changed to 8000 - Uniphore specific change
++  float expected_sample_rate = 8000;
+   bool use_wav_scp = false;  // true to use wav.scp as input
+ 
+   // Number of seconds for tail padding
+diff --git a/sherpa/cpp_api/websocket/offline-websocket-client.cc b/sherpa/cpp_api/websocket/offline-websocket-client.cc
+index 7f19202..3e921aa 100644
+--- a/sherpa/cpp_api/websocket/offline-websocket-client.cc
++++ b/sherpa/cpp_api/websocket/offline-websocket-client.cc
+@@ -31,7 +31,7 @@ Usage:
+ )";
+ 
+ // Sample rate of the input wave. No resampling is made.
+-static constexpr int32_t kSampleRate = 16000;
++static constexpr int32_t kSampleRate = 8000;
+ 
+ /** Read wave samples from a file.
+  *
+diff --git a/sherpa/cpp_api/websocket/online-websocket-client.cc b/sherpa/cpp_api/websocket/online-websocket-client.cc
+index d5dd5e0..00959d9 100644
+--- a/sherpa/cpp_api/websocket/online-websocket-client.cc
++++ b/sherpa/cpp_api/websocket/online-websocket-client.cc
+@@ -291,7 +291,7 @@ int32_t main(int32_t argc, char *argv[]) {
+   int32_t server_port = 6006;
+   float seconds_per_message = 10;
+   // Sample rate of the input wave. No resampling is made.
+-  int32_t SampleRate = 16000;
++  int32_t SampleRate = 8000;
+   std::string ctm_filename = "";
+ 
+   sherpa::ParseOptions po(kUsageMessage);

@@ -1,0 +1,91 @@
+absl-py==2.1.0
+audioread==3.0.1
+black==22.3.0
+Brotli @ file:///croot/brotli-split_1714483155106/work
+certifi @ file:///croot/certifi_1725551672989/work/certifi
+cffi==1.17.1
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+click==8.1.7
+coloredlogs==15.0.1
+cytoolz==0.12.3
+dataclasses==0.6
+dill==0.3.8
+docopt==0.6.2
+filelock @ file:///work/perseverance-python-buildout/croot/filelock_1701733993137/work
+flake8==5.0.4
+flatbuffers==24.3.25
+fsspec==2024.9.0
+graphviz==0.20.3
+grpcio==1.66.1
+humanfriendly==10.0
+icefall @ file:///nlsasfs/home/nltm-pilot/msdafini/k2/og_icefall/icefall
+idna @ file:///croot/idna_1714398848350/work
+intervaltree==3.1.0
+isort==5.10.1
+Jinja2 @ file:///croot/jinja2_1716993405101/work
+k2 @ file:///nlsasfs/home/nltm-pilot/msdafini/k2/whl_files/k2-1.24.4.dev20240905%2Bcuda12.4.torch2.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=a290dbf56d684e51341e884b4965f032a3a8ab923aebbfb4dfc53b123822a2c1
+kaldi-decoder==0.2.7
+kaldi_native_io==1.22.1
+kaldialign==0.9.1
+kaldifeat @ file:///nlsasfs/home/nltm-pilot/msdafini/k2/whl_files/kaldifeat-1.25.4.dev20240905%2Bcuda12.4.torch2.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl#sha256=c3300a279396bfe5af9e6190bb5b7f45c3b3fb4aaa1db0da57999759088149f0
+kaldifst==1.7.12
+kaldilm==1.15.1
+lhotse==1.27.0
+lilcom==1.8.0
+Markdown==3.7
+markdown-it-py==3.0.0
+MarkupSafe @ file:///work/perseverance-python-buildout/croot/markupsafe_1707342994941/work
+mccabe==0.7.0
+mdurl==0.1.2
+mkl-service==2.4.0
+mkl_fft @ file:///croot/mkl_fft_1725370245198/work
+mkl_random @ file:///croot/mkl_random_1725370241878/work
+mpmath @ file:///work/perseverance-python-buildout/croot/mpmath_1698864994882/work
+mypy-extensions==1.0.0
+networkx @ file:///croot/networkx_1717597493534/work
+num2words==0.5.13
+numpy @ file:///croot/numpy_and_numpy_base_1725470312869/work/dist/numpy-2.0.1-cp312-cp312-linux_x86_64.whl#sha256=e2374991344fa2241a2153ef3d550d3a1cd2d50cb1f1d51eddc82870abc88021
+onnx==1.16.2
+onnxconverter-common==1.14.0
+onnxoptimizer==0.3.13
+onnxruntime==1.19.2
+onnxsim==0.4.36
+packaging==24.1
+pathspec==0.12.1
+pillow @ file:///croot/pillow_1721059439630/work
+platformdirs==4.3.6
+protobuf==3.20.2
+pycantonese==3.4.0
+pycodestyle==2.9.1
+pycparser==2.22
+pyflakes==2.5.0
+Pygments==2.18.0
+pylangacq==0.16.2
+pypinyin==0.50.0
+PySocks @ file:///work/perseverance-python-buildout/croot/pysocks_1698845478203/work
+python-dateutil==2.9.0.post0
+PyYAML @ file:///work/perseverance-python-buildout/croot/pyyaml_1698849903511/work
+requests @ file:///croot/requests_1721410876868/work
+rich==13.8.1
+sentencepiece==0.2.0
+setuptools==72.1.0
+six==1.16.0
+sortedcontainers==2.4.0
+soundfile==0.12.1
+sympy @ file:///croot/sympy_1724938189289/work
+tabulate==0.9.0
+tensorboard==2.17.1
+tensorboard-data-server==0.7.2
+toolz==0.12.1
+torch==2.4.1
+torchaudio==2.4.1
+torchvision==0.19.1
+tqdm==4.66.5
+triton==3.0.0
+typeguard==4.3.0
+typing_extensions @ file:///croot/typing_extensions_1715268824938/work
+urllib3 @ file:///croot/urllib3_1718912636303/work
+wcwidth==0.2.13
+Werkzeug==3.0.4
+wheel==0.44.0
+wordseg==0.0.2

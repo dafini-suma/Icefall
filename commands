@@ -1,0 +1,262 @@
+         1  res
+    2  ls
+    3  squeue
+    4  Create conda env : conda create --name k2icefall_ak
+    5  conda create --name k2icefall_ak
+    6  which conda
+    7  cd /tmp/
+    8  cd 
+    9  mkdir k2_icefall
+   10  cd k2_icefall/
+   11  curl -O https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+   12  sha256sum Anaconda3-2023.09-0-Linux-x86_64.sh
+   13  bash Anaconda3-2023.09-0-Linux-x86_64.sh
+   14  source ~/.bashrc
+   15  conda info
+   16  conda create --name k2_icefall
+   17  conda activate k2_icefall
+   18  git clone  https://github.com/k2-fsa/icefall.git
+   19  pip install git+https://github.com/lhotse-speech/lhotse
+   20  bash k2_env.sh 
+   21  ls
+   22  bash ./k2_env.sh 
+   23  ls
+   24  cd icefall/
+   25  ls
+   26  pip install -r ./requirements.txt 
+   27  echo $PATH
+   28  export PATH="$PATH:/nlsasfs/home/nltm-pilot/msdafini/.local/bin"
+   29  source ~/.bashrc 
+   30  echo $PATH
+   31  conda activate k2_icefall
+   32  conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+   33  pip install ./../packages/k2-1.24.4.dev20240606+cuda12.1.torch2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+   34  pip install ./k2-1.24.4.dev20240606+cuda12.1.torch2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+   35  ls
+   36  cd ..
+   37  ls
+   38  pip install ./kaldifeat-1.25.4.dev20240223+cuda11.3.torch1.12.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl 
+   39  nvidia-smi
+   40  python --version
+   41  ls
+   42  pip install ./k2-1.24.4.dev20240301+cuda12.1.torch2.3.0.dev20240229-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl 
+   43  conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+   44  pip install ./k2-1.24.4.dev20240301+cuda12.1.torch2.3.0.dev20240229-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl 
+   45  cuda --version
+   46  ls
+   47  pip install kaldifeat-1.25.4.dev20240725+cuda12.4.torch2.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl 
+   48  pip install lhotse==1.16.0
+   49  pip install kaldi-native-io=1.22.1
+   50  pip install kaldi-native-io==1.22.1
+   51  pip install .
+   52  ls
+   53  conda activate k2_icefall/
+   54  conda activate k2_icefall
+   55  ls
+   56  mkdir vendor_data
+   57  cd vendor_data/
+   58  ls
+   59  mkdir tamil
+   60  cd tamil/
+   61  wget https://asr.iitm.ac.in/SPRING_INX/data/SPRING_INX_Tamil_R1.tar.gz
+   62  srun --partition=nltmp --nodes=1 --ntasks-per-node=16 --gres=gpu:A100-SXM4:1 --time=00:10:00 --pty /bin/bash
+   63  srun --partition=nltmp --nodes=1 --ntasks-per-node=8 --gres=gpu:A100-SXM4:1 --time=00:10:00 --pty /bin/bash
+   64  ls
+   65  rm SPRING_INX_Tamil_R1.tar.gz*
+   66  ls
+   67  screen -S tamil
+   68  screen -S tamil1
+   69  screen -S xamil
+   70  screen -x xamil 
+   71  screen -x tamil
+   72  screen -x tamil1
+   73  cd ..
+   74  ls
+   75  ls k2_icefall/
+   76  mkdir k2_expts
+   77  cp -r k2_icefall/icefall/ k2_expts/
+   78  cd k2_expts/
+   79  ls
+   80  mv icefall/ icefall_dummy
+   81  lsa
+   82  ls
+   83  cd icefall_dummy/
+   84  ls
+   85  cd ..
+   86  mkdir tamil
+   87  ls
+   88  cp -r icefall_dummy/ tamil/icefall
+   89  ls
+   90  cd tamil/
+   91  ls
+   92  mv icefall/ icefall_bkp
+   93  git clone https://github.com/k2-fsa/icefall.git
+   94  ls
+   95  cd icefall
+   96  ls
+   97  find --name 'prepare.sh' .
+   98  find 'prepare.sh' --name  .
+   99  find . --name 'prepare.sh'
+  100  find . -name 'prepare.sh'
+  101  ls
+  102  cd ..
+  103  rm -r icefall
+  104  cp -r ../icefall_dummy/ icefall
+  105  ls
+  106  ls icefall
+  107  ls icefall_bkp/
+  108  mkdir data
+  109  cd data/
+  110  cp -r ../../../vendor_data/tamil/SPRING_INX_Tamil_R1/dev/ .
+  111  ls
+  112  cp -r ../../../vendor_data/tamil/SPRING_INX_Tamil_R1/eval/ .
+  113  cp -r ../../../vendor_data/tamil/SPRING_INX_Tamil_R1/train/ .
+  114  ls
+  115  cd ..
+  116  ls
+  117  rm -r icefall_bkp/
+  118  ls
+  119  bash ./../../k2_icefall/k2_env.sh 
+  120  echo $PATH
+  121  pip install sentencepiece
+  122  cd ../../k2_icefall/
+  123  ls
+  124  wget https://huggingface.co/csukuangfj/k2/resolve/main/ubuntu-cuda/k2-1.24.4.dev20240905+cuda12.4.torch2.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  125  pip install ./k2-1.24.4.dev20240905+cuda12.4.torch2.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl 
+  126  conda list
+  127  pip install icefall
+  128  cd icefall/
+  129  ls
+  130  pip install -r ./requirements.txt
+  131  ls
+  132  realpath
+  133  pwd
+  134  cd icefall/
+  135  ls
+  136  pip install .
+  137  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+  138  export PYTHONPATH=/nlsasfs/home/nltm-pilot/msdafini/k2_icefall/icefall/icefall:$PYTHONPATH
+  139  pip show k2
+  140  pip install icefall
+  141  ls
+  142  cd ..
+  143  ls
+  144  python3 setup.py install
+  145  conda list
+  146  cd ../..
+  147  cd k2_expts/
+  148  ls
+  149  cd tamil/
+  150  ls
+  151  cd icefall/
+  152  ls
+  153  chmod +x tamil_submit.sh 
+  154  ls
+  155  sbatch tamil_submit.sh 
+  156  squeue -u msdafini
+  157  history > history.txt
+
+   
+   
+    1  res
+    2  ls
+    3  squeue
+    4  Create conda env : conda create --name k2icefall_ak
+    5  conda create --name k2icefall_ak
+    6  which conda
+    7  cd /tmp/
+    8  cd 
+    9  mkdir k2_icefall
+   10  cd k2_icefall/
+   11  curl -O https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+   12  sha256sum Anaconda3-2023.09-0-Linux-x86_64.sh
+   13  bash Anaconda3-2023.09-0-Linux-x86_64.sh
+   14  source ~/.bashrc
+   15  conda info
+   16  conda create --name k2_icefall
+   17  conda activate k2_icefall
+   18  git clone  https://github.com/k2-fsa/icefall.git
+   19  pip install git+https://github.com/lhotse-speech/lhotse
+   20  bash k2_env.sh 
+   21  ls
+   22  bash ./k2_env.sh 
+   23  ls
+   24  cd icefall/
+   25  ls
+   26  pip install -r ./requirements.txt 
+   27  echo $PATH
+   28  export PATH="$PATH:/nlsasfs/home/nltm-pilot/msdafini/.local/bin"
+   29  source ~/.bashrc 
+   30  echo $PATH
+   31  conda activate k2_icefall
+   32  conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+   33  pip install ./../packages/k2-1.24.4.dev20240606+cuda12.1.torch2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+   34  pip install ./k2-1.24.4.dev20240606+cuda12.1.torch2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+   35  ls
+   36  cd ..
+   37  ls
+   38  pip install ./kaldifeat-1.25.4.dev20240223+cuda11.3.torch1.12.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl 
+   39  nvidia-smi
+   40  python --version
+   41  ls
+   42  pip install ./k2-1.24.4.dev20240301+cuda12.1.torch2.3.0.dev20240229-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl 
+   43  conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+   44  pip install ./k2-1.24.4.dev20240301+cuda12.1.torch2.3.0.dev20240229-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl 
+   45  cuda --version
+   46  ls
+   47  pip install kaldifeat-1.25.4.dev20240725+cuda12.4.torch2.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl 
+   48  pip install lhotse==1.16.0
+   49  pip install kaldi-native-io=1.22.1
+   50  pip install kaldi-native-io==1.22.1
+   51  pip install .
+   52  exit
+   53  ls
+   54  exit
+   55  ls
+   56  tar -xvf SPRING_INX_Tamil_R1.tar.gz 
+   57  exit
+   58  conda activate k2_icefall
+   59  conda list
+   60  cd k2_expts/tamil/icefall/
+   61  ./prepare.sh 
+   62  pip install icefall
+   63  ./prepare.sh 
+   64  conda list
+   65  bash ../../../k2_icefall/k2_env.sh 
+   66  ./prepare.sh 
+   67  export PYTHONPATH=/nlsasfs/home/nltm-pilot/msdafini/k2_icefall/icefall:$PYTHONPATH
+   68  ./prepare.sh 
+   69  which python3
+   70  python -V
+   71  pip show k2
+   72  export PYTHONPATH=/nlsasfs/home/nltm-pilot/msdafini/k2_icefall/icefall:$PYTHONPATH
+   73  echo $PYTHONPATH
+   74  export PYTHONPATH=/nlsasfs/home/nltm-pilot/msdafini/k2_icefall/icefall/icefall:$PYTHONPATH
+   75  ./prepare.sh 
+   76  ls
+   77  cd icefall/
+   78  ls
+   79  pip install .
+   80  ./pre
+   81  cd ..
+   82  ./prepare.sh 
+   83  cd icefall/
+   84  ./../prepare.sh 
+   85  ./../scripts/prepare.sh 
+   86  cd ../
+   87  export PYTHONPATH=/speech/akshaya/my_icefall/icefall/icefall:$PYTHONPATH
+   88  export PYTHONPATH=/nlsasfs/home/nltm-pilot/msdafini/k2_icefall/icefall/icefall:$PYTHONPATH
+   89  ./prepare.sh 
+   90  pip install .
+   91  python -c "import icefall"
+   92  find . -name 'prepare_lang'
+   93  find . -name 'prepare_lang.py'
+   94  pip install icefall
+   95  export PYTHONPATH=/nlsasfs/home/nltm-pilot/msdafini/k2_expts/tamil/icefall:$PYTHONPATH
+   96  ./prepare.sh 
+   97  pip install icefall
+   98  ls
+   99  ./prepare.sh 
+  100  python3 egs/librispeech/ASR/zipformer/train.py  --world-size 2 --num-epochs 30 --start-epoch 1 --exp-dir ./exp --max-duration 400 --num-workers 4 --on-the-fly-feats True --manifest-dir /nlsasfs/home/nltm-pilot/msdafini/k2_expts/tamil/icefall/data/tamil/manifests --num-buckets 75 --bpe-model /nlsasfs/home/nltm-pilot/msdafini/k2_expts/tamil/icefall/data/tamil/lang_bpe_400/bpe.model --train-cuts /nlsasfs/home/nltm-pilot/msdafini/k2_expts/tamil/icefall/data/tamil/manifests/tamil_train_cuts.jsonl.gz --valid-cuts /nlsasfs/home/nltm-pilot/msdafini/k2_expts/tamil/icefall/data/tamil/manifests/tamil_eval_cuts.jsonl.gz --causal 1 --master-port 9777
+  101  history > history1.txt
+

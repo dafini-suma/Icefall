@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: icefall
+Version: 1.0
+Summary: Speech processing recipes using k2 and Lhotse.
+Author: The k2 and Lhotse Development Team
+License: Apache-2.0 License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.6.0
+License-File: LICENSE
+Requires-Dist: kaldifst>1.7.0
+Requires-Dist: kaldilm
+Requires-Dist: kaldialign
+Requires-Dist: num2words
+Requires-Dist: kaldi-decoder
+Requires-Dist: sentencepiece>=0.1.96
+Requires-Dist: pypinyin==0.50.0
+Requires-Dist: tensorboard
+Requires-Dist: typeguard
+Requires-Dist: dill
+Requires-Dist: onnx>=1.15.0
+Requires-Dist: onnxruntime>=1.16.3
+Requires-Dist: onnxoptimizer
+Requires-Dist: onnxsim
+Requires-Dist: onnxconverter_common
+Requires-Dist: black==22.3.0
+Requires-Dist: isort==5.10.1
+Requires-Dist: flake8==5.0.4
+Requires-Dist: pycantonese==3.4.0
